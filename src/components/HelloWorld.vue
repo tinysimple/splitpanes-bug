@@ -42,39 +42,38 @@ onMounted(() => {
   >
     <div v-if="show" style="height: 100px; width: 60vw; margin: auto">
       <splitpanes class="default-theme">
-        <pane size="16"> 16%左边面板 </pane>
-        <pane size="84"> 84%右边面板 </pane>
+        <pane size="16"> left pane(16%) </pane>
+        <pane size="84"> right pane(84%) </pane>
       </splitpanes>
     </div>
     <div>
       <div style="margin-top: 20px">
-        密码框（有初始值）：
+        Password Input(with initial value): 
         <el-radio-group v-model="type" @change="handleTypeChange">
-          <el-radio value="1">原生密码输入框</el-radio>
-          <el-radio value="2">element-plus密码输入框</el-radio>
+          <el-radio value="1">Native password input</el-radio>
+          <el-radio value="2">element-plus password input</el-radio>
         </el-radio-group>
       </div>
       <div style="margin-top: 20px">
-        密码框（无初始值）：
+        Password Input(no initial value): 
         <el-radio-group v-model="type" @change="handleTypeChange">
-          <el-radio value="-1">无初始值</el-radio>
+          <el-radio value="-1">no initial value</el-radio>
         </el-radio-group>
       </div>
     </div>
 
     <div class="login" style="flex-direction: column">
       <div class="login-form">
-        <label>原生密码框：</label><input ref="psw" type="password" />
+        <label>Native password input: </label><input ref="psw" type="password" />
       </div>
       <el-form ref="loginRef" :model="loginForm" class="login-form">
         <el-form-item prop="password">
-          <label>element-ui 密码框：</label>
+          <label>element-plus password input: </label>
           <el-input
             v-model="loginForm.password"
             type="password"
             size="large"
             auto-complete="off"
-            placeholder="密码"
           />
         </el-form-item>
       </el-form>
