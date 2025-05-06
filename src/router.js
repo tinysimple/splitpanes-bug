@@ -15,6 +15,7 @@ export const constantRoutes = [
 const router = createRouter({
     history: createWebHistory(),
     routes: constantRoutes,
+    base: '/splitpanes-bug',
     scrollBehavior(to, from, savedPosition) {
       if (savedPosition) {
         return savedPosition
