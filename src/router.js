@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from 'vue-router'
+import { createWebHashHistory, createRouter } from 'vue-router'
 // 公共路由
 export const constantRoutes = [
     {
@@ -13,9 +13,8 @@ export const constantRoutes = [
       },
 ];
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory('/splitpanes-bug/'),
     routes: constantRoutes,
-    base: '/splitpanes-bug',
     scrollBehavior(to, from, savedPosition) {
       if (savedPosition) {
         return savedPosition
